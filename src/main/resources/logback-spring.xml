@@ -1,7 +1,7 @@
 <configuration>
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <!-- Используйте формат hostname:port без tcp:// -->
-        <destination>7.tcp.eu.ngrok.io:11498</destination>
+        <destination>0.tcp.eu.ngrok.io:12819</destination>
 
         <!-- Дополнительные полезные настройки -->
         <reconnectionDelay>1 second</reconnectionDelay>
