@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@EntityScan("com.dreamscometrue.courseplatform.model")
+@EntityScan("com.drishluk.courseplatform.model")
 @SpringBootApplication
 public class CoursePlatformApplication {
 
