@@ -1,9 +1,9 @@
 <configuration>
 
     <appender name="ELASTIC" class="com.drishluk.courseplatform.security.ElasticAppender">
-        <elasticUrl>https://onp-search-5550840998.us-east-1.bonsaisearch.net:443/spring-logs-2025.05.31/_doc</elasticUrl>
-        <username>ouhdl58pck</username>
-        <password>2nee8iqpdt</password>
+        <elasticUrl>https://courseplatform-2469098345.us-east-1.bonsaisearch.net:443/spring-logs-2025.05.31/_doc</elasticUrl>
+        <username>tcmih9pthz</username>
+        <password>y8adk7lx74</password>
     </appender>
     <root level="INFO">
         <appender-ref ref="ELASTIC" />
