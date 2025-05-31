@@ -19,6 +19,8 @@ public class PlatformUserService implements UserDetailsService {
 
     private final PasswordEncoder passwordEncoder;
 
+
+
     public PlatformUserService(PlatformUserRepository platformUserRepository, PasswordEncoder passwordEncoder) {
         this.platformUserRepository = platformUserRepository;
         this.passwordEncoder = passwordEncoder;

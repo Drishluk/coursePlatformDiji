@@ -1,40 +1,12 @@
 <configuration>
-    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <!-- Используйте формат hostname:port без tcp:// -->
-        <destination>0.tcp.eu.ngrok.io:12819</destination>
 
-        <!-- Дополнительные полезные настройки -->
-        <reconnectionDelay>1 second</reconnectionDelay>
-        <connectionTimeout>5 seconds</connectionTimeout>
-        <keepAliveDuration>5 minutes</keepAliveDuration>
-
-        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
-            <providers>
-                <timestamp/>
-                <loggerName/>
-                <pattern>
-                    <pattern>
-                        {
-                        "level": "%level",
-                        "thread": "%thread",
-                        "message": "%message",
-                        "context": "%mdc"
-                        }
-                    </pattern>
-                </pattern>
-            </providers>
-        </encoder>
+    <appender name="ELASTIC" class="com.drishluk.courseplatform.security.ElasticAppender">
+        <elasticUrl>https://onp-search-5550840998.us-east-1.bonsaisearch.net:443/spring-logs-2025.05.31/_doc</elasticUrl>
+        <username>ouhdl58pck</username>
+        <password>2nee8iqpdt</password>
     </appender>
-
-    <!-- Консольный аппендер для отладки -->
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
-
     <root level="INFO">
-        <appender-ref ref="LOGSTASH"/>
-        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="ELASTIC" />
     </root>
+
 </configuration>

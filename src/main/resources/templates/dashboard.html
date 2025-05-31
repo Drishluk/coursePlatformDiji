@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Панель управления</title>
+  <title>Menu</title>
 </head>
 <body>
-<h1>Добро пожаловать!</h1>
+<h1>Your welcome!</h1>
 
-<p>Привет, <span th:text="${username}">пользователь</span>!</p>
+<p>Hello, <span th:text="${username}">user</span>!</p>
 
-<button id="logoutBtn">Выйти</button>
+<button id="logoutBtn">Logout</button>
 
 <div id="message"></div>
 
@@ -26,15 +26,15 @@
       const data = await response.json();
 
       if (response.ok && data.success) {
-        document.getElementById('message').innerHTML = '<p style="color: green;">Вы вышли из системы</p>';
+        document.getElementById('message').innerHTML = '<p style="color: green;">You\'ve logged out</p>';
         setTimeout(() => {
           window.location.href = '/login?logout';
         }, 1000);
       } else {
-        document.getElementById('message').innerHTML = '<p style="color: red;">Ошибка выхода</p>';
+        document.getElementById('message').innerHTML = '<p style="color: red;">Logout error</p>';
       }
     } catch (error) {
-      document.getElementById('message').innerHTML = '<p style="color: red;">Ошибка соединения</p>';
+      document.getElementById('message').innerHTML = '<p style="color: red;">Connection failed</p>';
     }
   });
 </script>

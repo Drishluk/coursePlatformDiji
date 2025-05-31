@@ -81,7 +81,6 @@ public class AuthenticationController {
     public ResponseEntity<?> registerSession(@RequestBody LoginRequest loginRequest,
                                              HttpServletRequest request) {
         try {
-            // Перевірка, чи користувач вже існує
             try {
                 platformUserService.loadUserByUsername(loginRequest.getUsername());
                 // Якщо користувач знайдений, значить він вже існує
@@ -90,7 +89,6 @@ public class AuthenticationController {
                 responseBody.put("message", "User already exists");
                 return ResponseEntity.status(HttpStatus.CONFLICT).body(responseBody);
             } catch (UsernameNotFoundException e) {
-                // Це нормально - користувач не існує, можемо реєструвати
             }
 
             // Реєстрація нового користувача
